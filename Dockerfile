@@ -6,4 +6,4 @@ RUN mvn -f /home/app/pom.xml clean package
 FROM openjdk:18.0-slim
 EXPOSE 8080
 COPY --from=build /home/app/target/*.jar app.jar
-ENTRYPOINT [ "sh", "-c", "java -jar /app.jar" ]
+ENTRYPOINT [ "java", "-jar", "/app.jar" ]
